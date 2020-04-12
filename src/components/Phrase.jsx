@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const PhraseContainer = styled.div`
   padding: 3rem;
@@ -41,6 +42,10 @@ const Phrase = ({ phrase }) => {
       <p>{phrase.author}</p>
     </PhraseContainer>
   );
+};
+
+Phrase.propTypes = {
+  phrase: PropTypes.object.isRequired,
 };
 
 export default Phrase;
