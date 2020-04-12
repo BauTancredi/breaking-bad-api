@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import Phrase from "./components/Phrase";
 
 const Container = styled.div`
   display: flex;
@@ -29,16 +30,22 @@ const Button = styled.button`
 `;
 
 function App() {
+  const [phrase, setPhrase] = useState({});
   const fetchApi = async () => {
     const api = await fetch(
       "https://breaking-bad-quotes.herokuapp.com/v1/quotes"
     );
     const phrase = await api.json();
-    console.log(phrase);
+    setPhrase(phrase[0]);
   };
+
+  useEffect(() => {
+    fetchApi();
+  }, []);
 
   return (
     <Container>
+      <Phrase phrase={phrase} />
       <Button onClick={fetchApi}>Obtain Phraise</Button>;
     </Container>
   );
