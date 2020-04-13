@@ -5,7 +5,7 @@ Breaking Bad API
 <h2>
 Intro
 </h2>
-Breaking Bad API is a personal project developed with React. It allows you to create a budget and add expenses.
+Breaking Bad API is a personal project developed with React. It allows you to get a random phrase from the characters of Breaking Bad. 
 
 We use Hooks to control the flow of the props and the state of the app.
 Styled components with emotion are used for css.
